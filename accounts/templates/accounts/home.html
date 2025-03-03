@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container text-center">
+    <h1>Welcome to the Payroll Management System</h1>
+
+    <div class="card mx-auto mt-5" style="max-width: 400px;">
+        <div class="card-body">
+            <h5 class="card-title">Get Started</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    <a href="{% url 'login' %}" class="btn btn-primary btn-lg btn-block">Login</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{% url 'register_employee' %}" class="btn btn-success btn-lg btn-block">Sign Up as Employee</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="{% url 'register_hr' %}" class="btn btn-info btn-lg btn-block">Sign Up as HR</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

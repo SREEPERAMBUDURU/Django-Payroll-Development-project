@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}HR Leave Management - Payroll Management System{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mt-5 mb-4">HR Leave Management</h2>
+
+    <div class="row">
+        {% for leave_request in leave_requests %}
+        <div class="col-md-6 mb-3">
+            <div class="card bg-primary">
+                <div class="card-body">
+                    <h5 class="card-title text-white mb-3">Leave Request</h5>
+                    <div class="leave-details">
+                        <div class="row mb-3">
+                            <div class="col-4 fw-bold">Employee:</div>
+                            <div class="col-8">{{ leave_request.employee.username }}</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-4 fw-bold">Start Date:</div>
+                            <div class="col-8">{{ leave_request.start_date|date:"M d, Y" }}</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-4 fw-bold">End Date:</div>
+                            <div class="col-8">{{ leave_request.end_date|date:"M d, Y" }}</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-4 fw-bold">Leave Type:</div>
+                            <div class="col-8">{{ leave_request.leave_type }}</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-4 fw-bold">Description:</div>
+                            <div class="col-8">{{ leave_request.description }}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 fw-bold">Status:</div>
+                            <div class="col-8">
+                                {% if leave_request.is_approved is None %}
+                                Pending
+                                {% elif leave_request.is_approved %}
+                                Approved
+                                {% else %}
+                                Denied
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% if leave_request.is_approved is None %}
+                    <form method="post" action="{% url 'hr_leave_management' %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="leave_id" value="{{ leave_request.id }}">
+                        <button type="submit" name="action" value="approve" class="btn btn-light mt-3">Approve</button>
+                        <button type="submit" name="action" value="deny" class="btn btn-light mt-3">Deny</button>
+                    </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
