@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Employee Dashboard - Payroll Management System{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Employee Dashboard</h2>
+
+    <div class="row justify-content-center">
+        <!-- Leave Management Card -->
+        <div class="col-md-5">
+            <div class="card mb-3 bg-primary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Leave Management</h5>
+                    <p class="card-text">Manage your leave requests.</p>
+                    <a href="{% url 'employee_leave_management' %}" class="btn btn-light">Go to Leave Management</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Management Card -->
+        <div class="col-md-5">
+            <div class="card mb-3 bg-primary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">User Management</h5>
+                    <p class="card-text">Manage your user profile and settings.</p>
+                    <a href="{% url 'user_management' %}" class="btn btn-light">Go to User Management</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
