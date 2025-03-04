@@ -3,27 +3,27 @@ Payroll Management System
 Project Overview:-
 This project was developed collaboratively by a team of three members. 
 My specific contributions include:
-✔ Payroll Calculation Logic & Salary Deduction (Main Backend Feature)
-✔ Leave Management System (Backend Logic & Validation)
-✔ REST API Development for Payroll & Leave Requests
-✔ PDF Payslip Generation (wkhtmltopdf Integration)
-✔ Email Automation for Salary Slips
+  =>Payroll Calculation Logic & Salary Deduction (Main Backend Feature)
+  =>Leave Management System (Backend Logic & Validation)
+  => REST API Development for Payroll & Leave Requests
+  => PDF Payslip Generation (wkhtmltopdf Integration)
+  => Email Automation for Salary Slips
 
 The Payroll Management System is a Django-based web application that automates payroll processing, leave tracking, and payslip generation. It simplifies HR tasks by integrating salary calculations, leave deductions, and automated payslip emails.
 
 Key Features:-
 
-Automated Payroll Calculation based on employee attendance.
-
-Leave Management System for employees & HR approvals.
-
-Dynamic PDF Payslip Generation using wkhtmltopdf.
-
-Automated Email Dispatch of salary slips.
-
-Role-Based Access Control for HR and employees.
-
-REST API Integration for payroll, leave, and authentication.
+  Automated Payroll Calculation based on employee attendance.
+  
+  Leave Management System for employees & HR approvals.
+  
+  Dynamic PDF Payslip Generation using wkhtmltopdf.
+  
+  Automated Email Dispatch of salary slips.
+  
+  Role-Based Access Control for HR and employees.
+  
+  REST API Integration for payroll, leave, and authentication.
 
 
 Technologies Used:-
@@ -40,7 +40,7 @@ Email Service: Mailtrap (SMTP)
 
 Version Control: Git & GitHub
 
-📥 Installation & Setup
+Installation & Setup:-
 
 Clone the repository:
 
